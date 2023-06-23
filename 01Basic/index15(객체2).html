@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //함수로 만드는 객체의 모형 (많이 사용x)
+        function person(name) { //생성자의 매개변수는 멤버변수처럼 사용 가능하다 
+            this.name = name;
+            this.age = 10; //person 함수 안에서 멤버변수처럼 역할을 한다.
+
+            this.info = function () { //this.info 에 함수를 저장한다.
+                console.log(this.age, this.name);
+            }
+        }
+
+        var obj = new person('hong'); //객체로 쓰기위한 함수를 저장
+        console.log(obj);
+        console.log(obj['age']);
+        console.log(obj.age);
+        console.log(obj.name);
+        obj.info();
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var func = function (a, b) {
+            //console.log(a, b);        
+
+            //보통이라면 함수 호출 시 매개변수를 2개 넣을 것
+            func(1, 2);
+
+            console.log(arguments); //전달되는 모든 매개변수
+            console.log(arguments); //매개변수의 길이
+            console.log(arguments); //첫번째 매개변수
+            console.log(arguments); //여섯번째 매개변수
+
+        }
+        //매개변수 개수를 정확히 일치하지 않아도 호출은 된다.
+        //but 맞춰서 호출하는 편이 좋다.
+        func(1,2,3,4,5,6);
+
+    </script>
+
+
+
+</body>
+</html>

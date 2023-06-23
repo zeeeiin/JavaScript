@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        이름(); //호이스팅 - 선언적함수에서만 가능
+
+        var result = func(1, 2);
+        console.log(result);
+
+        //함수 선언
+        function 이름 () {
+            console.log('함수 호출');
+        }
+
+        //함수 매개변수 2개 받을 때 콤마 사용
+        function func(a, b) { //매개변수 
+            return a + b; //리턴이 필요하면 적으면 된다.
+        }
+
+        //함수를 변수에 저장할 수 있다.
+        var a = func; //소괄호 () 를 빼고 입력해야한다.
+        console.log(a);
+
+        var result = a(1, 2);
+        console.log(result);
+
+        
+    </script>
+
+</body>
+</html>

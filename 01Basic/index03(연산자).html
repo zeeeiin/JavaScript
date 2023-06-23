@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var num1 = "10";
+        var num2 = 10;
+
+        console.log( num1 == num2 ); //true -값만 비교
+        console.log( num1 != num2 ); //false 
+
+        console.log( num1 === num2 ); //false - 값과 타입도 비교
+        console.log( num1 !== num2 ); //true
+
+
+        var a; //undefined 없는 값
+        var b = null; //없는 값
+
+        console.log( a == b ); //t
+        console.log( a != b ); //f
+        console.log( a === b ); //f
+        console.log( a !== b) ; //t
+
+
+        /* a, b 값을 같이 출력하고 싶다면 콤마로 나열하면 된다. */
+        console.log( a, b, a == b ); //t
+        console.log( a, b, a != b ); //f
+        console.log( a, b, a === b ); //f
+        console.log( a, b, a !== b) ; //t
+
+
+
+
+    </script>
+</body>
+</html>

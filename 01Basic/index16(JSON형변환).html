@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //원격의 컴퓨터(서버)와 데이터를 주고받을 때 JSON 표기방식을 이용한다.
+
+        var data = [ //현재 array 안에 배열형태
+            { id: 'kkk123', title: 'hello!', age: 10 }, //객체이면서 배열
+            { id: 'aaa123', title: 'hi!', age: 20 },
+            { id: 'bbb123', title: 'bye!', age: 15 }
+        ];
+
+        //data를 전달할 때 반드시 문자열이어야 한다.
+        //객체 => JSON 문자열로 변경
+        var result = JSON.stringify(data);
+        console.log(result);
+
+        //JSON 문자열 => 객체
+        var obj = JSON.parse(result);
+        console.log(obj);
+
+
+        //JSON.parse() 사용시 주의점
+
+        //SJON 문자열을 표기할 때 엄격한 규칙 => 숫자를 제외한 키 값은 반드시 ""로 묶인다.
+        //var exam = {id : "홍길동"}; //객체
+        //var exam = '{id : "홍길동"}'; //JSON 문자열
+
+        var exam = '{"id" : "홍길동"}';
+
+        var result2 = JSON.parse(exam);
+        console.log(result2);
+
+    </script>
+
+</body>
+
+</html>

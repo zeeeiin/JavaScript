@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+        //클로저를 이용한 세터
+
+        // function obj () {
+            
+        //     var name = '홍길동'; //현재 이 값을 밖에서 사용할 수 없다.
+
+        //     //setter
+        //     return function (aaa) { //매개변수가 있는 함수 선언
+        //         name = aaa; //aaa를 name 값으로 바꾸고
+        //         return name;
+        //     }
+        // }
+
+        // var result = obj(); //result는 현재 함수 타입.
+        // console.log( result('이순신') );
+
+
+        function person() {
+            var name = 'hong';
+
+            return {
+                'setName' : function (aaa) {   
+                    name = aaa; //aaa를 받아서 name값을 바꿔주기
+                }, //콤마 찍고
+                'getName' : function () {
+                    return name;
+                }
+
+            }; //중괄호는 객체 {키:값 -> }
+        }
+
+        var obj = person();
+
+        obj.setName('lee');
+        console.log( obj.getName() ); //
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
