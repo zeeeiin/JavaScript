@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <!-- 태그에서의 this는 자기자신 -->
+
+    <!-- check이벤트 연결 -->
+    <button onclick="check(this)">버튼의 이벤트</button>
+    <!-- 인라인 이벤트 만들면 아래에 function 생성하기 -->
+
+    <script>
+        function check(a) { //태그 사이에 있는 값을 얻을 수 있는 방법
+            // console.log(a);
+            // console.log(a.innerHTML);
+
+            a.innerHTML = "얍!";
+        };
+
+    </script>
+
+
+
+    <button id="btn">이벤트 함수안에서 this</button>
+
+    <script>
+        //js에서 this의 의미 - 선언된 위치에 따라서 달라진다.(렉시컬스코프)
+
+        var x = 1;
+        function xxx() { //함수 안에서 바로 있는 걸 참조.
+            var x = 10; //지역변수
+
+            console.log(this);
+            console.log(x);
+            console.log(this.x);            
+        }
+        xxx();
+
+        //이벤트 함수안에서 this
+        var btn = document.getElementById("btn");
+        btn.onclick = function () { //여기의 함수는 자기 자신 태그를 나타낸다.
+
+            console.log(this); //태그 자기자신
+            //헷갈리면 출력한 다음에 확인.
+
+        }
+
+    </script>
+    
+
+</body>
+</html>

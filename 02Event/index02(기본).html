@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="btn">기본 이벤트</button>
+
+    <script>
+        //console.log( document.getElementById("btn") );
+
+        //태그를 얻어서 변수에 저장
+        var btn = document.getElementById("btn"); 
+
+        //태그의 접근. onclick 속성에 익명함수 넣기
+        btn.onclick = function () {
+            alert("기본이벤트!");
+        }
+
+    </script>
+
+</body>
+</html>

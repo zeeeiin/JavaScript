@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>자바스크립트 카운트(인라인 이벤트를 이용해서 innerHTML value 속성을 이용해서 카운트처리하세요)</h2>
+    <h3>필요한 속성을 추가해도 됩니다</h3>
+
+    <input type="number" value="0" id="num">
+    <button onclick="count(this)" value="ubtn">+</button>
+    <button onclick="count(this)" value="dbtn">-</button>
+
+
+    <script>
+       
+       var upbtn = document.getElementById("ubtn");
+       var dwbtn = document.getElementById("dbtn");
+
+       //upbtn.onclick = function () {
+
+            // if( num.innerHTML >= 0 ) {                
+            //     num.innerHTML++;         
+            // }
+
+        upbtn.addEventListener('click', function(){
+
+            if( num.innerHTML >= 0 ){
+                num.innerHTML
+            }
+        });
+            
+        
+
+
+        dwbtn.onclick = function(){
+            if( num.innerHTML < 0 ) {
+                    alert('0보다 작을 수 없습니다!');
+            }
+            
+        }
+        
+        
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
