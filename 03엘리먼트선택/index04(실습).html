@@ -24,28 +24,36 @@
         <input type="checkbox" name="seat" value="7">7
 
         <br>
-        <button type="button" id="btn" onclick="reg">예약</button>
+        <button type="button" id="btn" >예약</button>
     </form>
 
     <script>
+        //var seat = document.getElementById("seat");
+        var seat = document.querySelectorAll("input[name='seat']");
 
-        var reg = document.getElementById("btn")
-        reg.onclick = function(){
-            //console.log(btn.checked);
-            if(btn.checked ??? ){
-                alert('좌석체크는 필수 입니다!');
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+
+            var arr = new Array(); //빈 배열
+            var bool = true;
+            for(var i = 0; i < seat.length; i++){
+                //console.log( seat[i] );
+                //console.log( seta[i].checked );
+
+                if( seat[i].checked === true ){
+                    bool = false; //체크되어있음
+                    arr.push( seat[i].value ); //좌석번호    
+                }
+            }
+            if(bool){ //true였으면 체크가 X
+                alert("좌석체크는 필수입니다");                
+            } else {
+                var obj = JSON.stringify( {data : arr} );
+                console.log(obj);
             }
         }
 
     </script>
-
-
-
-
-
-
-
-
 
 </body>
 </html>

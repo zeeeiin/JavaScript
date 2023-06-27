@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>할 일 목록</h3>
+
+    <input type="text" class="todo" placeholder="할 일을 작성하세요">
+    <button id="btn">할 일 목록 추가하기</button>
+
+    <ul class="list">
+        <!-- <li><a href="http://www.naver.com">할 일</a></li> -->
+        <!-- innerHTML로 해도 되긴 하는데 이걸 쓰면 계속 지워지기 떄문에 append 사용하기 -->
+
+    </ul>
+
+    <script>
+        /* 버튼은 누르면 이벤트가 동작 */
+        var list = document.querySelector(".list"); //ul
+
+        var todo = document.querySelector(".todo"); //input //todo -> 사용자가 입력한 값        
+        var btn = document.getElementById("btn");
+        btn.addEventListener('click', function() {
+            
+            var li = document.createElement('li'); //li 생성
+            var a = document.createElement('a'); //a 생성
+            var text = document.createTextNode( todo.value ); //문자열 노드를 생성
+
+            a.href = "http://www.naver.com";
+            console.log(a);
+            //a.innerHTML = "answkduf"; //ok
+            //a.appendChild('문자열'); //노드(엘리먼트)만 추가할 수 있다.
+
+            a.appendChild(text);
+            li.appendChild(a);
+            
+            list.appendChild(li); //ul자식으로 li 추가
+
+            todo.value = ''; //input태그의 공백
+
+        });
+
+    </script>
+
+</body>
+</html>

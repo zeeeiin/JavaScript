@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul class="box">
+        <li>박스1</li>
+        <li>박스2</li>
+        <li>박스3</li>
+    </ul>
+
+    <button id="btn">css 변경하기</button>
+    <!-- id가 btn인걸 클릭하면 css 박스 변경되게 만들것 -->
+
+    <script>
+        //var li = document.querySelector(".box li");
+        var li = document.querySelectorAll(".box li");
+        
+        var btn = document.getElementById("btn");
+        btn.onclick = function () {
+            
+            // li.style.color = 'red';
+            // li.style.backgroundColor = 'blue';
+
+            for(var i = 0; i < li.length; i++){
+                li[i].style.color = 'red';
+                li[i].style.backgroundColor = 'blue';
+            }
+
+        }
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

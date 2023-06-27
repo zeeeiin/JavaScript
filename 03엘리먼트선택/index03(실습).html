@@ -10,46 +10,40 @@
     <h2>자바스크립트 카운트(인라인 이벤트를 이용해서 innerHTML value 속성을 이용해서 카운트처리하세요)</h2>
     <h3>필요한 속성을 추가해도 됩니다</h3>
 
-    <input type="number" value="0" id="num">
-    <button onclick="count(this)" value="ubtn">+</button>
-    <button onclick="count(this)" value="dbtn">-</button>
+    <input type="number" value="0" id="number">
+    <button class="a" onclick="add(this)" >+</button>
+    <button class="b" onclick="add(this)" >-</button>
 
+    <!-- <script>
+    //풀이1   
+        var number = document.querySelector("#number");
+
+        var a = document.querySelector(".a");
+        a.addEventListener('click', function() {
+            number.value++;
+        }
+        )
+
+    </script> -->
 
     <script>
-       
-       var upbtn = document.getElementById("ubtn");
-       var dwbtn = document.getElementById("dbtn");
+    //풀이2   
+       var number = document.querySelector("#number");
 
-       //upbtn.onclick = function () {
+        function add(a) {
 
-            // if( num.innerHTML >= 0 ) {                
-            //     num.innerHTML++;         
-            // }
-
-        upbtn.addEventListener('click', function(){
-
-            if( num.innerHTML >= 0 ){
-                num.innerHTML
-            }
-        });
-            
-        
-
-
-        dwbtn.onclick = function(){
-            if( num.innerHTML < 0 ) {
+            if(a.innerHTML == "+") {
+                number.value++;
+            } else {
+                if(number.value <= 0 ){
                     alert('0보다 작을 수 없습니다!');
+                    return; //return false;
+                }
+                number.value--;
             }
-            
         }
-        
-        
-
-
-
 
     </script>
-
 
 
 </body>
