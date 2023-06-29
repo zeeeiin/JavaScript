@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="title"></p>
+
+    <ul class="box" onclick="">
+        <li>1. 몽실</li>
+        <li>2. 뭉치</li>
+        <li>3. 비단</li>
+        <li>4. 까망</li>
+        <li>5. 미미</li>
+    </ul>
+
+    <script>
+        var title = document.querySelector(".title");
+
+        /* li 전부에 이벤트를 걸고 싶으면 공통 부모인 ul에 걸면 된다. */
+        var box = document.querySelector(".box"); //ul
+        box.onclick = function() {
+            //li를 클릭했을 때 동작하는지 확인
+            console.log('이벤트위임');
+
+            //똑같이 이벤트 객체를 넣으면 된다.
+            //console.log(event.target); //이벤트가 동작한 태그
+            //console.log(this); //ul
+            //console.log(event.currentTarget); //실제로 이벤트가 걸려있는 태그(위치)
+
+            //console.dir(event.target.tagName);//이벤트가 동작한 태그명
+
+            if(event.target.tagName != "LI") {
+                return;
+            }
+
+            title.innerHTML = event.target.innerHTML;
+        }
+
+
+    </script>
+
+</body>
+</html>

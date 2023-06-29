@@ -58,65 +58,75 @@
             </div>
             <div class="right">
                 <div class="inner">
-                    <p class="con">자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다</p>
+                    <p>자바스크립트는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 사이드 네트워크 프로그래밍에도 사용되고 있다</p>
                     <a href="https://www.naver.com">위키백과</a>
                 </div>
-            </div>            
+
+                <div class="hide" style="display: none; border: 1px solid #333; height: 300px;">
+                    <p>
+                        몽실<br>
+                        12세<br>
+                        능력단위<br>
+                        사료몰래다먹기, 뭉치 방해하기, 예쁨독차지하기, 왕성한 배변활동<br>
+                    </p>                                        
+                </div> 
+            </div>
         </div>
     </section>
 
     <script>
 
-        var btn = document.getElementById("btn1");
-        var tag = document.querySelectorAll("h2, p, a");
+        var tags = document.querySelectorAll("h2, p, a");
+        var body_tag = document.body;
+        
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = function() {
+            
+            if( btn1.className == 'dark' ){  //dark클래스가 있다면 먼저 dark를 지워야함
+                //검은색배경으로 바꾸기
+                //btn1.classList.remove("dark"); 
+                //btn1.classList.toggle("dark");
 
-        btn.onclick = function() {
-            //기본은 밝은 상태. 
-            if(!btn.classList.contains("white")){ //만약white가 없다면...
-                btn.classList.add("white"); //white 추가.
-                btn.innerHTML = '밝게보기'; //버튼 이름 바뀜
-                document.body.style.backgroundColor = '#000'; //배경색 black으로 변경됨
-                for(var i = 0; i < tag.length; i++){ //글자색은 white로 변경
-                    tag[i].style.color = '#fff';
-                }
-            } else { //white가 있는 경우..  어둡게 설정된 상태에서  밝게 변경하고자 할 때 실행
-                btn.classList.remove("white"); //white 삭제하고               
-                btn.innerHTML = '어둡게보기';
-                document.body.style.backgroundColor = '#fff'; //배경색 white로 변경
-                for(var i = 0; i < tag.length; i++){ //글자색 black으로 변경
-                    tag[i].style.color = '#000';
+                body_tag.style.backgroundColor = "black";
+                btn1.innerHTML = '밝게보기'; //버튼 이름 바뀜
+                for(var i = 0; i < tags.length; i++){ //글자색은 white로 변경
+                    tags[i].style.color = "white";
+                }               
+               
+            } else { 
+                //흰색배경으로 바꾸기
+                body_tag.style.backgroundColor = "white";                              
+                btn1.innerHTML = '어둡게보기';                
+                for(var i = 0; i < tags.length; i++){ //글자색 black으로 변경
+                    tags[i].style.color = "black";
                 }
             }
+            btn1.classList.toggle("dark");
         }
         
+        var inner = document.querySelector('.right > .inner');       
+        var hide = document.querySelector(".hide");
+
         var btn2 = document.getElementById("btn2");
-        var content = document.querySelector(".right.inner");//inner or right? con           
-                
         btn2.onclick = function() {
             
-            if( !btn2.classList.contains(".right.inner")){ //기본상태일때 내용보기 누른 상태
-                btn2.classList.add('name');
+            if( btn2.className == 'name'){ //기본상태일때 내용보기 누른 상태
+                //이름보기로 변환                
                 btn2.innerHTML = '이름보기'; //버튼 내용변경
-                content.value = '';
-                content.style.display = 'none';                
+                inner.style.display = 'none';   
+                hide.style.display = 'block';
+                //p.innerHTML= '내용';
+                // content.value = ''; //parentElement
 
             } else {
-                btn2.classList.remove('name');
-                btn2.innerHTML = '내용보기';
-                add();
+                //내용보기로 변환
+                btn2.innerHTML = '내용보기'; //버튼 내용변경
+                inner.style.display = 'block';   
+                hide.style.display = 'none';               
             }
+            btn2.classList.toggle('name');
         }
-        
-        //btn2.addEventListener('click', add);        
-        
-        //바꿀 내용 - 줄바꿈 되어야함
-        function add() {
-            '<p>몽실</p>';
-            '<p>12세</p>';
-            '<p>능력단위</p>';
-            '<p>사료몰래다먹기, 뭉치 방해하기, 예쁨독차지하기, 왕성한 배변활동</p>'; 
-        }
-
+       
       
     </script>
     
