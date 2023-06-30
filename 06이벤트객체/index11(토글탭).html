@@ -65,9 +65,29 @@
         3. data-id의 값에 알맞는 태그에 active속성을 추가하면됩니다.
 		*/
 
+        var toggle = document.querySelector(".toggle");
+        
+        toggle.onclick = function() {
+
+            if( event.target.tagName != "LI") {
+               return;
+            }
+
+            // 1. ul에 이벤트 버블링을 이용해서 클릭이벤트를 걸고 클릭되는 타겟의 data-id를 얻습니다.
+            var target = event.target.dataset.id;
+            var result = document.querySelector(target);
+
+            //2. toggle-menu의 active속성을 삭제
+            for(var i = 0; i < toggle-menu.length; i++){
+                toggle-menu[i].classList.remove("active");
+            }
+
+            //3. data-id의 값에 알맞는 태그에 active속성을 추가하면됩니다.
+            result.classList.add("active");
+
+        }
+        
     </script>
-
-
 
 </body>
 </html>

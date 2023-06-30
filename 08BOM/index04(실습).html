@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img{display: none;}
+        .bgImg {display: inline; animation: fadeIn .3s ease-in-out;}
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                /*margin-left: -100%;*/
+            } to {
+                opacity: 1;
+                /*margin-left: 0; */
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <!-- 애니메이션이 새롭게 적용이 되려면, img태그를 새롭게 생성해야한다. -->
+    <div class="slide">
+        <img src="img/slide1.jpg" class="bgImg">
+        <!-- <img src="img/slide2.jpg" class="bgImg">
+        <img src="img/slide3.jpg" class="bgImg">
+        <img src="img/slide4.jpg" class="bgImg"> -->
+    </div>
+
+
+    <script>
+
+        setInterval(changeImg, 2000);
+
+        var num = 1;
+
+        function changeImg() {
+
+            //2초마다 이미지 태그가 생성
+            var img = document.createElement("img"); 
+            //이미지를 배열에 넣어서 순서대로 돌아가게 해도 된다.
+            //선생님은 번호를 매겨서 쓸 것.
+            img.src = 'img/slide' + ++num + ".jpg";
+            img.classList.add("bgImg");
+
+            //기존 이미지 삭제
+            var slide = document.querySelector(".slide");
+            slide.removeChild( slide.firstElementChild );
+
+            //생성한 이미지 추가
+            slide.appendChild( img );
+
+            if( num == 4 ) num = 0;
+
+            console.log(img);
+        }
+
+        /*
+
+         var imgs = docu.querySelectorAll('img');
+         var num = 1;
+         setInterval(function() {
+
+            for(var i = 0; i < bt.length; i++){
+                    imgs[i].classList.remove("bgImg");
+            }           
+            
+            imgs[num].classList.add("bgImg");
+            num++;
+
+            if( numm == 4 ) {
+                num = 0;
+            }
+        }, 3000);
+
+        */
+       
+
+
+
+    </script>
+
+
+</body>
+</html>
